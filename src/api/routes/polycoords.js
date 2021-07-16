@@ -6,6 +6,7 @@ var fs = require('fs');
 var controlledAirspaceGeoJSON = JSON.parse(fs.readFileSync('././config/faa-controlled-airspace-DTW.json', 'utf8')); /* Inside the get function */
 
 polycoordsRoute.post('/', function (req, res) {
+  try{
     var geojson = req.body;
     var controlledAirspace = turf.polygon(controlledAirspaceGeoJSON.features[0].geometry.coordinates);
 
@@ -30,6 +31,10 @@ polycoordsRoute.post('/', function (req, res) {
 
   res.status(200).json({ status: "Success", data: { body: 
     intersection } });
+  }
+  catch(error){
+    return res.status(400).json({error: error.toString() })
+  }
 })
 
 module.exports = polycoordsRoute;
