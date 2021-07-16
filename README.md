@@ -8,5 +8,5 @@ Make sure you have Node on your machine.
 2) Install Express
 
 ```bash
-pip install --save express
+npm install --save express
 ```
