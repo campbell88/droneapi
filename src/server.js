@@ -16,4 +16,4 @@ app.listen(3000, () => {
 })
 app.get("/", (req, res) =>
 res.status(200)
-.send({ message: "Hello from the server !"}));
+.send({ message: "Hello, this is your server, can I take your order?"}));
