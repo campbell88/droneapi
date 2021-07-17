@@ -34,4 +34,4 @@ node server.js
 ## How I Could Have Made It Better
 - Use middleware to validate the request
 - Plugged in a front end so you don't have to use Postman
-- Better error handling
+- Added a function and removed the logic from the polycoords route file
